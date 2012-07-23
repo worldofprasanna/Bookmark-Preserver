@@ -1,0 +1,12 @@
+{
+  "name": "Bookmark Preserver",
+  "version": "1.1",
+  "background": { "scripts": ["savebookmark.js"] },
+  "permissions": [
+    "tabs", "http://*/*"
+  ],
+  "browser_action": {
+      "name": "Click to save the current page."
+  },
+  "manifest_version": 2
+}

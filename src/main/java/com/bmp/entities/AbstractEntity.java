@@ -1,10 +1,21 @@
 package com.bmp.entities;
 
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
+
+@MappedSuperclass
 public class AbstractEntity implements IEntity {
 
+	
 	private Long pKey;
 	private Boolean deleted;
+	
 	@Override
+	@Id
+	@GeneratedValue
+	@Column(name="pkey")	
 	public Long getPKey() {
 		// TODO Auto-generated method stub
 		return this.pKey;
@@ -17,6 +28,7 @@ public class AbstractEntity implements IEntity {
 	}
 
 	@Override
+	@Column(name="deleted")
 	public Boolean getDeleted() {
 		// TODO Auto-generated method stub
 		return this.deleted;

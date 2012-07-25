@@ -8,6 +8,7 @@ import java.util.Map.Entry;
 import java.util.Set;
 
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 import com.bmp.entities.IEntity;
@@ -68,7 +69,7 @@ implements IDao<E, K>  {
 	@Override
 	public IEntity find(Class inEntityClass, Serializable pkey) {
 		// TODO Auto-generated method stub
-		return null;
+		return (IEntity)entityManager.find(inEntityClass, pkey);
 	}
 
 	@Override
@@ -80,9 +81,10 @@ implements IDao<E, K>  {
 	@Override
 	public void purge(IEntity entity) {
 		// TODO Auto-generated method stub
-		
+		entityManager.refresh(entity);
 	}
 
+	@PersistenceContext
 	public void setEntityManager(EntityManager entityManager) {
 		this.entityManager = entityManager;
 	}

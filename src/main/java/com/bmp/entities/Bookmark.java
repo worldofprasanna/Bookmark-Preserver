@@ -1,5 +1,6 @@
 package com.bmp.entities;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
@@ -13,12 +14,16 @@ public class Bookmark extends AbstractEntity{
 	public void setUserId(String userId) {
 		this.userId = userId;
 	}
+	
+	@Column (name="userid")
 	public String getUserId() {
 		return userId;
 	}
 	public void setUrl(String url) {
 		this.url = url;
 	}
+	
+	@Column(name="url")
 	public String getUrl() {
 		return url;
 	}
